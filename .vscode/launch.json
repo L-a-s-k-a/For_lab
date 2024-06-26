@@ -1,0 +1,20 @@
+{
+    "configurations" : 
+    [
+      {
+        "cwd" : "${workspaceRoot}",
+        "device" : "STM32F429ZI",
+        "executable" : "${workspaceRoot}/build/${workspaceFolderBasename}.elf",
+        "name" : "Cortex Debug (generated)",
+        "preLaunchTask" : "CMake: build",
+        "preRestartCommands" : [ "load", "enable breakpoint", "monitor reset" ],
+        "request" : "launch",
+        "runToEntryPoint" : "main",
+        "servertype" : "stutil",
+        "showDevDebugOutput" : "raw",
+        "svdFile" : "${workspaceRoot}/build/_deps/st-svd-archive-src/STM32F4_svd_V1.8/STM32F429.svd",
+        "type" : "cortex-debug"
+      }
+    ],
+    "version" : "0.2.0"
+  }
