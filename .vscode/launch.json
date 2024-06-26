@@ -1,20 +1,23 @@
 {
-    "configurations" : 
-    [
-      {
-        "cwd" : "${workspaceRoot}",
-        "device" : "STM32F429ZI",
-        "executable" : "${workspaceRoot}/build/${workspaceFolderBasename}.elf",
-        "name" : "Cortex Debug (generated)",
-        "preLaunchTask" : "CMake: build",
-        "preRestartCommands" : [ "load", "enable breakpoint", "monitor reset" ],
-        "request" : "launch",
-        "runToEntryPoint" : "main",
-        "servertype" : "stutil",
-        "showDevDebugOutput" : "raw",
-        "svdFile" : "${workspaceRoot}/build/_deps/st-svd-archive-src/STM32F4_svd_V1.8/STM32F429.svd",
-        "type" : "cortex-debug"
-      }
-    ],
-    "version" : "0.2.0"
-  }
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug",
+            "cwd": "${workspaceFolder}",
+            "executable": "./build/For_Lab_F429ZI.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "openocd",
+            "device": "STM32F429ZI",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f4x.cfg"
+            ],
+            "svdFile": "./STM32F429.svd"
+        }
+    ]
+}
